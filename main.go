@@ -28,31 +28,27 @@ func printGreeting(name string) {
 func travel() {
 	var choice string
 	for choice != "Y" && choice != "N" {
-		choice = handleResponseFromUser("Shall I randomly choose a planet for you to visit? (Y or N)")
+		choice = handleUserResponse("Shall I randomly choose a planet for you to visit? (Y or N)")
 		if choice == "Y" {
-			travelToRandomPlanet()
+			handlePlanetChoice("Traveling to Jupiter...","","Arrived at Jupiter. The large red spot appears ominous.")
 		} else if choice == "N" {
-			planetName := handleResponseFromUser("Name the planet you would like to vist!")
-			travelToPlanet(planetName)
+			planetName := handleUserResponse("Name the planet you would like to vist!")
+			handlePlanetChoice("Traveling to", planetName,"Arrived at Neptune. A very cold planet, furthest from the sun.")
 		} else {
 			fmt.Println("Sorry, I didn't get that.")
 		}
 	}
 }
 
-func handleResponseFromUser(prompt string) string {
+func handleUserResponse(prompt string) string {
 	var response string
 	fmt.Println(prompt)
 	fmt.Scan(&response)
 	return response
 }
 
-func travelToRandomPlanet() {
-	fmt.Println("Traveling to Jupiter...")
-	fmt.Println("Arrived at Jupiter. The large red spot appears ominous.")
-}
-
-func travelToPlanet(planetName string) {
-	fmt.Printf("Traveling to %s...\n", planetName)
-	fmt.Println("Arrived at Neptune. A very cold planet, furthest from the sun.")
+func handlePlanetChoice(response string, planetName string, planet string) string {
+	fmt.Println(response, planetName)
+	fmt.Println(planet)
+	return response
 }
