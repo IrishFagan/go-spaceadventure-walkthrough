@@ -21,6 +21,10 @@ Arrived at Neptune. A very cold planet, furthest from the sun.
 
 ## Ideas
 
-TODO
+Print a random planet name and description when asked user if they
+would like to hear about a random planet.
+
+Print planet description when user inputs the name of a specific
+planet
 
 &copy; 2019 Yong Joseph Bakos. All rights reserved.
