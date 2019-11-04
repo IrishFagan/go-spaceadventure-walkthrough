@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	printWelcome()
-	printGreeting(getName())
+	printGreeting()
 	fmt.Println("Let's go on an adventure!")
 	travel()
 }
@@ -14,14 +14,8 @@ func printWelcome() {
 	fmt.Println("There are 8 planets to explore.")
 }
 
-func getName() string{
-	var name string
-	fmt.Println("What is your name?")
-    fmt.Scan(&name)
-    return name
-}
-
-func printGreeting(name string) {
+func printGreeting() {
+	name := handleUserResponse("What is your name?")
 	fmt.Printf("Nice to meet you, %s. My name is Eliza, I'm an old friend of Siri.\n", name)
 }
 
