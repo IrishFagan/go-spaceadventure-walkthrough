@@ -3,18 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	printWelcome()
-	printGreeting()
+	printIntroduction("Welcome to the Solar System!\n","There are 8 planets to explore.")
 	fmt.Println("Let's go on an adventure!")
 	travel()
 }
 
-func printWelcome() {
-	fmt.Println("Welcome to the Solar System!")
-	fmt.Println("There are 8 planets to explore.")
-}
-
-func printGreeting() {
+func printIntroduction(greeting string, intro string) {
+	fmt.Println(greeting,intro)
 	name := handleUserResponse("What is your name?")
 	fmt.Printf("Nice to meet you, %s. My name is Eliza, I'm an old friend of Siri.\n", name)
 }
