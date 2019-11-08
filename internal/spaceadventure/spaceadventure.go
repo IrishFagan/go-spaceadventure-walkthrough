@@ -15,18 +15,26 @@ func printIntroduction(greeting string, intro string) {
 }
 
 func travel() {
+	if (randomDestination) {
+		handlePlanetChoice()
+	} else {
+		travel
+	}
+}
+
+func promptRandomOrSpecific(prompt string) bool {
 	var choice string
 	for choice != "Y" && choice != "N" {
-		choice = responseToPrompt("Shall I randomly choose a planet for you to visit? (Y or N)")
+		choice = responseToPrompt(prompt)
 		if choice == "Y" {	
-			handlePlanetChoice("Traveling to Jupiter...","","Arrived at Jupiter. The large red spot appears ominous.")
+			return true
 		} else if choice == "N" {
-			planetName := responseToPrompt("Name the planet you would like to vist!")
-			handlePlanetChoice("Traveling to", planetName,"Arrived at Neptune. A very cold planet, furthest from the sun.")
+			return false
 		} else {
 			fmt.Println("Sorry, I didn't get that.")
 		}
 	}
+	return false
 }
 
 func responseToPrompt(prompt string) string {
