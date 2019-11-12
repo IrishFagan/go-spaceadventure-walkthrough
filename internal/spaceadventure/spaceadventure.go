@@ -5,6 +5,7 @@ import "fmt"
 func Start(planetarySystem PlanetarySystem) {
 	printIntroduction("Welcome to the",planetarySystem,"There are 8 planets to explore.")
 	fmt.Println("Let's go on an adventure!")
+	fmt.Println("Would you like me to show you a random planet?")
 	travel()
 }
 
@@ -42,7 +43,8 @@ func travel() {
 		printRandomPlanet()
 	} else {
 		var planetName string
-		fmt.Scanln(&planetName)
+		fmt.Println("What planet would you like to visit?")
+		fmt.Scan(&planetName)
 		printSpecificPlanet(planetName)
 	}
 }
