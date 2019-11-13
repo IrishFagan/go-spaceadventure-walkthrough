@@ -3,15 +3,15 @@ package spaceadventure
 import "fmt"
 
 func Start(planetarySystem PlanetarySystem) {
-	printIntroduction("Welcome to the",planetarySystem,"There are 8 planets to explore.")
+	printIntroduction("Welcome to the ",planetarySystem,"There are %d planets to explore!\n")
 	fmt.Println("Let's go on an adventure!")
 	fmt.Println("Would you like me to show you a random planet?")
 	travel()
 }
 
-func printIntroduction(greeting string, planetarySystem PlanetarySystem, intro string,) {
-	fmt.Println(greeting, planetarySystem.Name,"\n")
-	fmt.Println(intro)
+func printIntroduction(greeting string, planetarySystem PlanetarySystem,intro string,) {
+	fmt.Print(greeting, planetarySystem.Name,"\n")
+	fmt.Printf(intro, planetarySystem.NumberOfPlanets())
 	name := responseToPrompt("What is your name?")
 	fmt.Printf("Nice to meet you, %s. My name is Eliza, I'm an old friend of Siri.\n", name)
 }
