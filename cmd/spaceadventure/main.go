@@ -6,7 +6,7 @@ func main() {
 	spaceadventure.Start(
 		spaceadventure.PlanetarySystem{
 			Name: "Solar System", Planets: []spaceadventure.Planet{
-				spaceadventure.Planet{"Earth", "Nice planet"},
+				spaceadventure.Planet{"Earth", "Nice planet"}, 
 			},
 		},
 	)
